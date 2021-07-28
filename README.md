@@ -12,7 +12,15 @@ Ubuntu အတွက်ပအိုဝ်းစာရေးလို့ရမယ�
     make install
 
  ပြီးရင် Log out သို့မဟုတ် ကွန်ပျူတာကိုပိတ်ပြီးပြန်ဖွင့်ရန်လိုပါသည်။
- ပြန်ဖြုတ်လိုလျှင်
+လက်ကွက်ရွေးဖို့
+
+ - Settings ကိုသွားပါ 
+ - Region & Language ကိုဆက်ဝင်ပါ။ 
+ - အပေါင်းလက္ခဏာ (+) ကိုနှိပ်ပြီး PaOh လို့ရှာပြီး Add လိုက်ရင်ရပါပြီ။
+
+***စာရိုက်တဲ့အခါ ကီးဘုတ်လက်ကွက်အပြန်အလှန်ပြောင်းဖို့ Super(Win) + Space ကိုနှိပ်ရုံပါ။***
+
+ **ပြန်ဖြုတ်လိုလျှင်**
 
      make uninstall 
 
@@ -39,4 +47,3 @@ Ubuntu အတွက်ပအိုဝ်းစာရေးလို့ရမယ�
     </layoutList>
 
 Ref: https://askubuntu.com/questions/510024/what-are-the-steps-needed-to-create-new-keyboard-layout-on-ubuntu
-
