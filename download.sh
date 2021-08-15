@@ -10,12 +10,13 @@ if [ -d $target_dir ]; then
 fi
 
 for url in "${files[@]}"; do
-    wget -c -q "${target_url}${url}" -P "$target_dir" --show-progress || {
+    wget -c -q "${target_url}${url}" -P "$target_dir" --show-progress && chmod +x "${target_dir}/${url}" || {
         echo "Download failed 🥺"
         exit 1
     }
 done
 cd $target_dir
+
 echo ""
 echo "✅ Ready to install 🥳"
 echo ""
