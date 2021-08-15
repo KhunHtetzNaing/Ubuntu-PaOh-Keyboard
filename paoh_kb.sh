@@ -12,32 +12,84 @@ kb_path="/usr/share/X11/xkb/symbols/pao"
 
 install() {
     # copy pao keyboard layout file to system
-    if cp "pao" "$kb_path"; then
+    if sudo cp "pao" "$kb_path"; then
         echo "- Copied keyboard layout!"
         cd "$rules_dir"
 
         # Backup evdev.xml
         if [ ! -f $bak ]; then
-            cp $org $bak && echo "- Backup success✅" || echo "- Backup failed ❌"
+            sudo cp $org $bak && echo "- Backup success ✅" || echo "- Backup failed ❌"
         else
             # Check installed
             if grep -q paoh "$org"; then
                 # Exist
-                rm -f "$org" && cp "$bak" "$org"
+                sudo rm -f "$org" && sudo cp "$bak" "$org"
             fi
         fi
-        echo "- Edit $org"
+        echo "- Edit $org ✅"
         # Add config to evdev.xml
-        sed -i "s/$search/$replace/g" $org && echo "- Installed ✅" ; echo "- Now, you need to logout or reboot!" || echo "Failed ❌"
+        sudo sed -i "s/$search/$replace/g" $org && {
+            echo "- Installed ✅"
+            add_2_input_source
+            echo ""
+            echo "ℹ️  Now you can change keyboard layout by pressing (Super + Space) ℹ️"
+            echo ""
+        } || echo "Failed ❌"
     else
-        echo "Run with sudo -_-"
+        usage
         exit 1
     fi
 }
 
 uninstall() {
     cd "$rules_dir"
-    rm -f "$kb_path" && mv -f "$bak" "$org" && echo "- Uninstalled ✅" ; echo "- Now, you need to logout or reboot!" || echo "Uninstall failed ❌"
+    if [ ! -f $kb_path ] || [ ! -f $bak ]; then
+        echo "You need to install first ℹ️"
+        usage
+        exit 1
+    fi
+
+    sudo rm -f "$kb_path" && {
+        sudo mv -f "$bak" "$org" && {
+            echo "- Uninstalled ✅"
+            remove_input_source
+        } || echo "Uninstall failed ❌"
+    } || {
+        usage
+        exit 1
+    }
+}
+
+# Ref => https://askubuntu.com/a/805207
+add_2_input_source(){
+    cur="$(gsettings get org.gnome.desktop.input-sources sources)"
+    if [[ ! $cur == *"pao"* ]]; then
+        # Append pao to array
+        cur=${cur/]/, (\'xkb\', \'pao\')]}
+        gsettings set org.gnome.desktop.input-sources sources "$cur" && echo "- Add to input source ✅" || echo "- Add to input source ❌"
+    fi
+}
+
+remove_input_source(){
+    cur="$(gsettings get org.gnome.desktop.input-sources sources)"
+    cur=${cur:1:-1}
+    cur=${cur// /HtetzSpace}
+    cur=${cur//),/), }
+    cur=($cur)
+    for i in "${cur[@]}"; do
+        if [[ ! $i == *"pao"* ]]; then
+            out+="${i//HtetzSpace/ }"
+        fi
+    done
+    if [[ $out == *, ]]; then
+      out=${out:0:-1}
+    fi
+    cur="[${out}]"
+    gsettings set org.gnome.desktop.input-sources sources "$cur" && echo "- Remove input source ✅" || echo "- Remove input source ❌"
+}
+
+usage(){
+    echo "Usage: ./paoh_kb.sh install|uninstall"
 }
 
 case $1 in
@@ -49,11 +101,6 @@ uninstall)
     uninstall
     ;;
 *)
-    echo "Usage: sudo sh ./paoh_kb.sh install|uninstall"
+    usage
     ;;
 esac
-
-# install
-# uninstall
-# logout from command
-# gnome-session-quit --no-prompt
