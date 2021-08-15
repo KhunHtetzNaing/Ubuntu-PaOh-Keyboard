@@ -2,50 +2,69 @@
 ![enter image description here](https://i.imgur.com/Cwrfkxb.png)
 Ubuntu အတွက်ပအိုဝ်းစာရေးလို့ရမယ့် လက်ကွက်လေးဖြစ်ပါတယ်။
 ဥဘွန်းတုမှာအသင့်ပါလာတဲ့ မြန်မာလက်ကွက်ကို မုဲင်ꩻငါ ( ꩻ ) နှင့် မုဲင်ꩻပတ်ငါ ( ႏ ) ဖြည့်စွတ်လိုက်ခြင်းသာဖြစ်ပါတယ်။
+ထည့်သွင်းဖို့ကတော့ ဒီ **Repository** ကိုဒေါင်းပြီး **paoh_kb.sh** ကို **Run** လိုက်ရုံပါပဲ။
+**Terminal** နဲ့မရင်းနှီးသေးတဲ့သူတွေအတွက် အောက်ဘက်မှာပုံလေးတွေနဲ့ရှင်းပြထားပါတယ်။
 
+    # Download လုပ်ခြင်း
+    bash <(wget -qO- https://github.com/KhunHtetzNaing/Ubuntu-PaOh-Keyboard/raw/main/download.sh) && cd pao-kb
+    
+    # Install လုပ်ရန်
+    ./paoh_kb.sh install
+    
+    # Uninstall ပြန်လုပ်လိုလျှင်
+    ./paoh_kb.sh uninstall
 
-# အလိုအလျောက်ထည့်သွင်းနည်း
- Terminal ကိုဖွင့်ပြီး အောက်ပါကုဒ်တွေကို တစ်ကြောင်းခြင်း Copy ကူးထည့်ပြီး Enter နှိပ်ရုံပါ။
+# ထည့်သွင်းနည်းအပြည့်အစုံ
+ပထမဦးဆုံး **Terminal** ကိုဖွင့်လိုက်ပါ။
+**Desktop** ပေါ်ကနေ **Right click** နှိပ်ပြီး **Open in terminal** ကိုနှိပ်ရင်လည်းရပါတယ်။
+![enter image description here](https://i.imgur.com/81WCMth.png)
 
-    git clone https://github.com/KhunHtetzNaing/Ubuntu-PaOh-Keyboard
-    cd Ubuntu-PaOh-Keyboard
-    make install
+ပြီးရင်ဒီ လိုအပ်တဲ့ဖိုင်တွေ Download လုပ်ဖို့ အောက်ပါ Command ကို 
+**Copy** ကူးပြီး **Terminal** ထဲမှာ **Paste** လုပ်ပါ။
 
- ပြီးရင် Log out သို့မဟုတ် ကွန်ပျူတာကိုပိတ်ပြီးပြန်ဖွင့်ရန်လိုပါသည်။
-လက်ကွက်ရွေးဖို့
+    bash <(wget -qO- https://github.com/KhunHtetzNaing/Ubuntu-PaOh-Keyboard/raw/main/download.sh) && cd pao-kb
 
- - Settings ကိုသွားပါ 
- - Region & Language ကိုဆက်ဝင်ပါ။ 
- - အပေါင်းလက္ခဏာ (+) ကိုနှိပ်ပြီး PaOh လို့ရှာပြီး Add လိုက်ရင်ရပါပြီ။
+ပြီးရင်ကီးဘုတ်ပေါ်က **Enter** ခလုတ်ကိုနှိပ်လိုက်ပါ။
+![Download script & files](https://i.imgur.com/kT88NUF.png)
+   
+   ဒါဆိုရင်လိုအပ်တာတွေ **Download** လုပ်ပြီးလို့ **Install** လုပ်ဖို့အဆင်သင့်ဖြစ်နေပါပြီ။
+   ![Download Done!](https://i.imgur.com/tccZKxe.png)
+    
+**Install** လုပ်ပါအောက်ပါကုဒ်လေးကိုရိုက်ထည့်လိုက်ပါ။
+လွဲမှာစိုးရင် အပေါ်ကအတိုင်း **Copy** ကူးထည့်လည်းရပါပြီ။
 
-***စာရိုက်တဲ့အခါ ကီးဘုတ်လက်ကွက်အပြန်အလှန်ပြောင်းဖို့ Super(Win) + Space ကိုနှိပ်ရုံပါ။***
+    ./paoh_kb.sh install
+    
+ပြီးရင် **Enter** နှိပ်ပါ။
+![Install PaO keyboard example!](https://i.imgur.com/aWnfbQA.png)
 
- 
+သင့်ကွန်ပျူတာမှာ **Password** ခံထားရင်တော့ ဒီလိုမျိုး **Password** တောင်းလာပါလိမ့်မယ်။
+ရိုက်ထည့်ပေးရန်လိုအပ်ပါတယ်။ မခံထားရင်တော့ဒီအဆင့်ကိုကျော်သွားမှာပါ။
+
+![If requires password example!](https://i.imgur.com/kLHhLfN.png)
+
+ဒါဆို **Install** လုပ်လို့ပြီးသွားပါပြီ။
+စာရိုက်တဲ့အခါ  **English** နဲ့ **ပအိုဝ်း**လက်ကွက်အပြန်အလှန်ပြောင်းဖို့  **Super + Space** ကိုနှိပ်ရုံပါ။
+**Super** ဆိုတာက ကီးဘုတ်ပေါ်မှာ **Windows ⊞** ပုံလေးနဲ့ခလုတ်လေးပါ။
+**Ubuntu** မှာတော့သူ့ကို **Super** လို့ခေါ်ပါတယ်။
+![PaO keyboard has been installed example!](https://i.imgur.com/DdQa6jz.png)
 
 ## ပြန်ဖြုတ်လိုလျှင်
+အောက်က **Command** ကိုရိုက်ပြီးပြန်ဖြုတ်လို့ရပါတယ်။
 
-     make uninstall 
+    ./paoh_kb.sh uninstall
+![Uninstall example!](https://i.imgur.com/5T8HESx.png)
+ 
+ဒါဆိုရင်ကိုယ့်စက်ထဲကနေ **ပအိုဝ်းကီးဘုတ်**ကိုဖြုတ်ပြီးသွားပါပြီ။
 
- ဟု ရိုက်ပြီး Enter နှိပ်ပါ။
-##  မိမိဘာသာထည့်သွင်းခြင်း
+![Uninstalled example!](https://i.imgur.com/UDQ2mgr.png)
 
-> ဒီနည်းလမ်းကိုသာမန်အသုံးပြုသူများအတွက် အကြံမပြုလိုပါ။
+အဆင်မပြေတာရှိရင် **[Facebook](https://www.facebook.com/iamHtetz)** မှာလာမေးလို့ရပါတယ်။
+အားလုံးပြီးသွားရင် **pao-kb** ဆိုတဲ့ Folder ကိုလည်းဖျက်ချင်ရင် ဖျက်ပစ်လို့ရပါတယ်။
 
-**pao** ဖိုင်ကိုကူးပြီး **/usr/share/X11/xkb/symbols/** အောက်မှာသွားထည့်ပေးပါ။
-**/usr/share/X11/xkb/rules/evdev.xml** ဖိုင်ကိုဖွင့်ပါ။
-`</layoutList>` ကိုရှာပြီးအောက်ပါကုဒ်တွေနဲ့ အစားထိုးပေးပါ။
+![You can delete pao-kb folder.](https://i.imgur.com/La5wqeg.png)
 
-    <layout>
-    <configItem>
-    <name>pao</name>
-    <!-- Keyboard indicator for PaOh (Pa-O, Pa'O, Black Karen) layouts -->
-    <shortDescription>paoh</shortDescription>
-    <description>PaOh</description>
-    <languageList>
-    <iso639Id>blk</iso639Id>
-    </languageList>
-    </configItem>
-    </layout>
-    </layoutList>
+# ကိုးကားချက်များ
 
-Ref: https://askubuntu.com/questions/510024/what-are-the-steps-needed-to-create-new-keyboard-layout-on-ubuntu
+ - https://askubuntu.com/a/805207
+ - https://askubuntu.com/questions/510024/what-are-the-steps-needed-to-create-new-keyboard-layout-on-ubuntu
