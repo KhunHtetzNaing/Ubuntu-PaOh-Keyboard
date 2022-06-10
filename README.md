@@ -68,3 +68,8 @@ Ubuntu အတွက်ပအိုဝ်းစာရေးလို့ရမယ�
 
  - https://askubuntu.com/a/805207
  - https://askubuntu.com/questions/510024/what-are-the-steps-needed-to-create-new-keyboard-layout-on-ubuntu
+
+  # အခြား OS အတွက်ပအိုဝ်းကီးဘုတ်များ
+
+ - [macOS](https://github.com/KhunHtetzNaing/macOS-PaOh-Keyboard)
+ - [Windows](https://github.com/KhunHtetzNaing/Windows-PaOh-Keyboard)
